@@ -27,14 +27,14 @@ export default function StaysPage() {
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brass">
               Find a place with proof
             </p>
-            <h1 className="mt-5 font-serif text-[clamp(3.5rem,5.2vw,4.75rem)] font-semibold leading-[0.9] text-ink">
+            <h1 className="mt-5 font-serif text-[clamp(3.6rem,7vw,7rem)] font-semibold leading-[0.9] text-ink">
               <span className="block">Stay with</span>
               <span className="block">honest</span>
               <span className="block">maps.</span>
             </h1>
           </div>
-          <div className="self-end">
-            <p className="max-w-2xl text-lg leading-8 text-charcoal/70">
+          <div className="lg:self-center lg:pb-20">
+            <p className="max-w-2xl text-lg leading-8 text-charcoal/70 lg:text-xl lg:leading-9">
               Search stays where the host&apos;s local knowledge is part of the
               listing: what is worth it, what to avoid, what is nearby, and what
               recent guests quietly confirmed.
