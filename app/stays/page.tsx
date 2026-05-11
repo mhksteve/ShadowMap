@@ -22,12 +22,12 @@ export default function StaysPage() {
           </Link>
         </nav>
 
-        <header className="grid gap-10 py-10 lg:grid-cols-[0.95fr_1.05fr] lg:py-12">
+        <header className="grid gap-10 py-10 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:py-0">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brass">
               Find a place with proof
             </p>
-            <h1 className="mt-5 font-serif text-[clamp(3.5rem,6vw,5.2rem)] font-semibold leading-[0.9] text-ink">
+            <h1 className="mt-5 font-serif text-[clamp(3.5rem,5.2vw,4.75rem)] font-semibold leading-[0.9] text-ink">
               <span className="block">Stay with</span>
               <span className="block">honest</span>
               <span className="block">maps.</span>

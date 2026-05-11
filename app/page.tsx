@@ -60,7 +60,7 @@ export default function Home() {
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-brass">
               Stays with a secret map
             </p>
-            <h1 className="font-serif text-[clamp(3.6rem,6.2vw,5.2rem)] font-semibold leading-[0.9] tracking-normal text-ink">
+            <h1 className="font-serif text-[clamp(3.6rem,7vw,7rem)] font-semibold leading-[0.9] tracking-normal text-ink">
               <span className="block">Find stays.</span>
               <span className="block">Trust the</span>
               <span className="block">map.</span>
