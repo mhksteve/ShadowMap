@@ -39,6 +39,7 @@ export type DemoStay = {
   mood: string;
   price: string;
   sleeps: string;
+  filterTags: string[];
   bestFor: string[];
   description: string;
   imageUrl: string;
@@ -192,6 +193,7 @@ export const demoStays: DemoStay[] = [
     mood: "Curious weekends",
     price: "From GBP 142/night",
     sleeps: "Sleeps 2",
+    filterTags: ["Boutique"],
     bestFor: ["Design-led weekends", "First-time Lisbon", "Food-led trips"],
     description:
       "A fictional design-led apartment used to show how a stay listing can carry a host-approved Shadow Map before real inventory exists.",
@@ -227,6 +229,7 @@ export const demoStays: DemoStay[] = [
     mood: "Burned-out escapes",
     price: "From GBP 188/night",
     sleeps: "Sleeps 2-4",
+    filterTags: ["Romantic", "Pet-Friendly"],
     bestFor: ["Quiet weekends", "Coastal walks", "Rainy-day reading"],
     description:
       "A fictional coastal stay for showing calm-trip recommendations, warning notes, and practical guest trust signals.",
@@ -260,6 +263,7 @@ export const demoStays: DemoStay[] = [
     mood: "Long-stay rhythm",
     price: "From GBP 96/night",
     sleeps: "Sleeps 1-2",
+    filterTags: ["Remote Work"],
     bestFor: ["Remote work", "Long stays", "Solo city rhythm"],
     description:
       "A fictional work-friendly stay for showing how Shadow Map can include practical local knowledge, not just sightseeing.",
@@ -279,6 +283,104 @@ export const demoStays: DemoStay[] = [
       { label: "Area map", url: "https://www.google.com/maps/search/Porto+Portugal+apartments" }
     ],
     poiIds: ["porto-work-cafe", "penny-cellar", "north-steps-walk"]
+  },
+  {
+    id: "glasshouse-cabin-lake-district",
+    name: "Glasshouse Cabin",
+    hostName: "Nora",
+    location: "Lake District, United Kingdom",
+    neighborhood: "Woodland edge",
+    category: "Unique Stay",
+    mood: "Quiet nature reset",
+    price: "From GBP 164/night",
+    sleeps: "Sleeps 2",
+    filterTags: ["Unique", "Romantic"],
+    bestFor: ["Nature stays", "Slow mornings", "Offline weekends"],
+    description:
+      "A fictional cabin listing for testing unique stays, quiet recommendations, and host warnings before real partners are added.",
+    imageUrl:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Cornwall%2C%20United%20Kingdom%20%28Unsplash%29.jpg",
+    imageCredit: "Demo image: Cornwall, United Kingdom on Wikimedia Commons",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Cornwall,_United_Kingdom_(Unsplash).jpg",
+    trust: ["Host verified", "Weather caveats included", "Guest feedback monitored"],
+    warnings: ["Car recommended", "Patchy phone signal near the trail"],
+    links: [
+      {
+        label: "Sample Airbnb search",
+        url: "https://www.airbnb.com/s/Lake-District--United-Kingdom/homes"
+      },
+      {
+        label: "Sample Booking.com search",
+        url: "https://www.booking.com/searchresults.html?ss=Lake%20District%2C%20United%20Kingdom"
+      },
+      {
+        label: "Area map",
+        url: "https://www.google.com/maps/search/Lake+District+cabin+stay"
+      }
+    ],
+    poiIds: ["harbour-slow-loop", "quiet-reading-room"]
+  },
+  {
+    id: "courtyard-family-house-barcelona",
+    name: "Courtyard Family House",
+    hostName: "Clara",
+    location: "Barcelona, Spain",
+    neighborhood: "Gracia",
+    category: "Family Stay",
+    mood: "Easy family base",
+    price: "From GBP 211/night",
+    sleeps: "Sleeps 5",
+    filterTags: ["Family"],
+    bestFor: ["Families", "Long weekends", "Walkable food"],
+    description:
+      "A fictional family stay used to preview how Shadow Map can guide guests toward easy meals, parks, pharmacy stops, and honest avoid notes.",
+    imageUrl:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Lisboa%2C%20Portugal%20%28Unsplash%29.jpg",
+    imageCredit: "Demo image: Lisboa, Portugal on Wikimedia Commons",
+    imageSourceUrl: "https://commons.wikimedia.org/wiki/File:Lisboa,_Portugal_(Unsplash).jpg",
+    trust: ["Family-friendly guide", "Practical stops mapped", "No hidden partnerships"],
+    warnings: ["Nap-time quiet hours", "Main plaza gets crowded after 6pm"],
+    links: [
+      { label: "Sample Airbnb search", url: "https://www.airbnb.com/s/Barcelona--Spain/homes" },
+      {
+        label: "Sample Booking.com search",
+        url: "https://www.booking.com/searchresults.html?ss=Barcelona%2C%20Spain"
+      },
+      { label: "Area map", url: "https://www.google.com/maps/search/Barcelona+family+apartment" }
+    ],
+    poiIds: ["taberna-late-window", "quiet-reading-room", "square-menu-trap"]
+  },
+  {
+    id: "garden-mews-bath",
+    name: "Garden Mews",
+    hostName: "Imogen",
+    location: "Bath, United Kingdom",
+    neighborhood: "Widcombe",
+    category: "Pet-Friendly Stay",
+    mood: "Walkable with a dog",
+    price: "From GBP 132/night",
+    sleeps: "Sleeps 2 plus pet",
+    filterTags: ["Pet-Friendly", "Boutique"],
+    bestFor: ["Pet-friendly trips", "Quiet cafes", "Gentle walks"],
+    description:
+      "A fictional pet-friendly stay to show how listings can include dog walks, practical stops, and avoid-if caveats.",
+    imageUrl:
+      "https://commons.wikimedia.org/wiki/Special:FilePath/Lisbon%2C%20Portugal%20%28Unsplash_dRNT_zPMZ6k%29.jpg",
+    imageCredit: "Demo image: Lisbon, Portugal on Wikimedia Commons",
+    imageSourceUrl:
+      "https://commons.wikimedia.org/wiki/File:Lisbon,_Portugal_(Unsplash_dRNT_zPMZ6k).jpg",
+    trust: ["Pet-friendly notes checked", "Walkable guide", "Guest validated"],
+    warnings: ["Some pubs require booking with pets", "Avoid the steep lane after rain"],
+    links: [
+      { label: "Sample Airbnb search", url: "https://www.airbnb.com/s/Bath--United-Kingdom/homes" },
+      {
+        label: "Sample Booking.com search",
+        url: "https://www.booking.com/searchresults.html?ss=Bath%2C%20United%20Kingdom"
+      },
+      { label: "Area map", url: "https://www.google.com/maps/search/Bath+pet+friendly+stay" }
+    ],
+    poiIds: ["harbour-slow-loop", "quiet-reading-room", "porto-work-cafe"]
   }
 ];
 
