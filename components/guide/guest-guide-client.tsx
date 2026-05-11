@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import Link from "next/link";
 import { Compass, ExternalLink, Flame, MapPin, Moon, ShieldCheck } from "lucide-react";
 import type { DemoPoi, GuestVibe } from "@/lib/demo-data";
 
@@ -43,9 +44,21 @@ export function GuestGuideClient({
   return (
     <main className="min-h-screen bg-cream text-charcoal">
       <section className="mx-auto min-h-screen w-full max-w-md px-4 py-5">
+        <nav className="mb-5 flex items-center justify-between border-b border-charcoal/10 pb-4">
+          <Link href="/" className="font-serif text-3xl font-semibold tracking-normal text-ink">
+            Shadow Map
+          </Link>
+          <Link
+            href="/stays"
+            className="rounded-full border border-charcoal/15 px-3 py-2 text-xs font-semibold transition hover:border-charcoal hover:bg-charcoal hover:text-cream"
+          >
+            Stays
+          </Link>
+        </nav>
+
         <header className="border-b border-charcoal/10 pb-5">
           <p className="text-xs font-semibold uppercase tracking-[0.3em] text-brass">
-            Shadow Map
+            Host local guide
           </p>
           <h1 className="mt-4 font-serif text-6xl font-semibold leading-none text-ink">
             Your local edit
