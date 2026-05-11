@@ -23,7 +23,7 @@ export default function StaysPage() {
         </nav>
 
         <header className="grid gap-10 py-10 lg:min-h-[calc(100vh-5rem)] lg:grid-cols-[0.95fr_1.05fr] lg:items-center lg:py-0">
-          <div>
+          <div className="lg:self-center lg:pb-20">
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brass">
               Find a place with proof
             </p>
