@@ -1,23 +1,42 @@
 import Link from "next/link";
-import { ArrowRight, MapPinned, Mic2, Sparkles } from "lucide-react";
+import { ArrowRight, BedDouble, KeyRound, MapPinned, ShieldCheck, Sparkles } from "lucide-react";
 
 const pillars = [
   {
-    icon: Mic2,
-    title: "Voice Brain-Dump",
-    copy: "Record the kind of local notes that never fit in a generic guidebook."
+    icon: ShieldCheck,
+    title: "Host-backed truth",
+    copy: "Recommendations begin with a real host, then get checked by guest feedback and freshness signals."
   },
   {
     icon: Sparkles,
-    title: "AI Concierge Layer",
-    copy: "Transcribe, classify, and turn host tips into mood-aware recommendations."
+    title: "AI, kept in its lane",
+    copy: "AI organizes the guide, extracts useful details, and flags weak claims without pretending to be the source."
   },
   {
     icon: MapPinned,
-    title: "Guest-Ready Guide",
-    copy: "Publish a private-feeling URL with no guest login and no app download."
+    title: "Fewer, better choices",
+    copy: "Guests see nearby places with honest context: best for, avoid if, last confirmed, and what makes it worth it."
   }
-];
+] as const;
+
+const entryPoints = [
+  {
+    href: "/stays",
+    icon: BedDouble,
+    eyebrow: "Find a place first",
+    title: "Stay somewhere with a guide worth trusting.",
+    copy: "Browse boutique stays, guesthouses, and host partners where the local Shadow Map is part of the reason to book.",
+    cta: "Explore trusted stays"
+  },
+  {
+    href: "/guide/demo-host",
+    icon: KeyRound,
+    eyebrow: "Already booked",
+    title: "Unlock the local edit around your stay.",
+    copy: "Open your host's Shadow Map, choose the mood you're in, and get a tight set of places that fit the day.",
+    cta: "Open a guide preview"
+  }
+] as const;
 
 export default function Home() {
   return (
@@ -39,31 +58,16 @@ export default function Home() {
         <div className="grid flex-1 items-center gap-12 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:py-20">
           <div className="max-w-3xl">
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-brass">
-              The local secret concierge
+              Stays with a secret map
             </p>
             <h1 className="font-serif text-[clamp(4rem,11vw,9.75rem)] font-semibold leading-[0.83] tracking-normal text-ink">
-              Make every stay feel personally edited.
+              Find the stay. Trust the map.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-charcoal/75 sm:text-xl">
-              Shadow Map turns a host&apos;s voice notes into a guest-ready guide
-              shaped by mood, pace, and taste. Less generic travel content. More
-              &quot;you must try the little place two doors down.&quot;
+              Shadow Map is for guests who want more than pretty rooms and fake
+              top tens. Find a stay with real local intelligence, or unlock the
+              honest guide for a place you&apos;ve already booked.
             </p>
-            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-              <Link
-                href="/dashboard"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-charcoal px-6 text-sm font-semibold text-cream transition hover:bg-ink"
-              >
-                Start a Host Guide
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-              <Link
-                href="/guide/demo-host"
-                className="inline-flex h-12 items-center justify-center rounded-full border border-charcoal/20 px-6 text-sm font-semibold transition hover:border-charcoal"
-              >
-                Preview Guest View
-              </Link>
-            </div>
           </div>
 
           <aside className="rounded-[2rem] border border-charcoal/10 bg-linen p-4 shadow-editorial">
@@ -85,7 +89,7 @@ export default function Home() {
               <div className="space-y-4 pt-5">
                 {["Tiny natural wine bar", "Late bakery window", "Canal-side gallery"].map(
                   (item, index) => (
-                    <div
+                    <article
                       key={item}
                       className="flex gap-4 rounded-2xl border border-charcoal/10 bg-white/45 p-4"
                     >
@@ -97,17 +101,51 @@ export default function Home() {
                           {item}
                         </h3>
                         <p className="mt-1 text-sm leading-6 text-charcoal/65">
-                          Host tip extracted from a voice note, ready for a
-                          guest&apos;s mood filter.
+                          Personally recommended, guest-validated, and ready
+                          for the mood you&apos;re actually in.
                         </p>
                       </div>
-                    </div>
+                    </article>
                   )
                 )}
               </div>
             </div>
           </aside>
         </div>
+
+        <section className="grid gap-4 border-t border-charcoal/10 py-6 lg:grid-cols-2">
+          {entryPoints.map((entry) => {
+            const Icon = entry.icon;
+
+            return (
+              <Link
+                key={entry.title}
+                href={entry.href}
+                className="group rounded-[1.5rem] border border-charcoal/10 bg-white/50 p-5 transition hover:-translate-y-1 hover:border-charcoal/30 hover:shadow-editorial sm:p-6"
+              >
+                <div className="flex items-start justify-between gap-6">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-charcoal text-cream">
+                    <Icon className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <ArrowRight
+                    className="h-5 w-5 text-charcoal/35 transition group-hover:translate-x-1 group-hover:text-charcoal"
+                    aria-hidden="true"
+                  />
+                </div>
+                <p className="mt-6 text-xs font-semibold uppercase tracking-[0.28em] text-brass">
+                  {entry.eyebrow}
+                </p>
+                <h2 className="mt-3 font-serif text-4xl font-semibold leading-none text-ink sm:text-5xl">
+                  {entry.title}
+                </h2>
+                <p className="mt-4 max-w-xl text-sm leading-6 text-charcoal/65">
+                  {entry.copy}
+                </p>
+                <p className="mt-6 text-sm font-semibold text-charcoal">{entry.cta}</p>
+              </Link>
+            );
+          })}
+        </section>
 
         <section className="grid gap-3 border-t border-charcoal/10 py-6 md:grid-cols-3">
           {pillars.map((pillar) => {
