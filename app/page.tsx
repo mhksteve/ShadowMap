@@ -55,13 +55,15 @@ export default function Home() {
           </Link>
         </nav>
 
-        <div className="grid flex-1 items-center gap-12 py-14 lg:grid-cols-[1.08fr_0.92fr] lg:py-20">
+        <div className="grid flex-1 items-center gap-12 py-10 lg:grid-cols-[1.08fr_0.92fr] lg:py-12">
           <div className="max-w-3xl">
             <p className="mb-6 text-xs font-semibold uppercase tracking-[0.32em] text-brass">
               Stays with a secret map
             </p>
-            <h1 className="font-serif text-[clamp(4rem,11vw,9.75rem)] font-semibold leading-[0.83] tracking-normal text-ink">
-              Find the stay. Trust the map.
+            <h1 className="font-serif text-[clamp(3.6rem,6.2vw,5.2rem)] font-semibold leading-[0.9] tracking-normal text-ink">
+              <span className="block">Find stays.</span>
+              <span className="block">Trust the</span>
+              <span className="block">map.</span>
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-8 text-charcoal/75 sm:text-xl">
               Shadow Map is for guests who want more than pretty rooms and fake

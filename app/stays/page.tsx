@@ -22,13 +22,15 @@ export default function StaysPage() {
           </Link>
         </nav>
 
-        <header className="grid gap-10 py-12 lg:grid-cols-[0.95fr_1.05fr] lg:py-16">
+        <header className="grid gap-10 py-10 lg:grid-cols-[0.95fr_1.05fr] lg:py-12">
           <div>
             <p className="text-xs font-semibold uppercase tracking-[0.32em] text-brass">
               Find a place with proof
             </p>
-            <h1 className="mt-5 font-serif text-[clamp(3.9rem,9vw,8rem)] font-semibold leading-[0.86] text-ink">
-              Book the stay that comes with the honest map.
+            <h1 className="mt-5 font-serif text-[clamp(3.5rem,6vw,5.2rem)] font-semibold leading-[0.9] text-ink">
+              <span className="block">Stay with</span>
+              <span className="block">honest</span>
+              <span className="block">maps.</span>
             </h1>
           </div>
           <div className="self-end">
